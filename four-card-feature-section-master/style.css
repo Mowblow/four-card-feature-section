@@ -1,0 +1,196 @@
+/* //FONT-FACE */
+
+@font-face {
+  font-family: poppins-200;
+  src: url(./Poppins/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: poppins-400;
+  src: url(./Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: poppins-600;
+  src: url(./Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: poppins-medium;
+  src: url(./Poppins/Poppins-Medium.ttf);
+}
+
+/* // RESETS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* //VARIABLES */
+:root {
+  /* FONT */
+  --FF-200: "poppins-200", sans-serif;
+  --FF-400: "poppins-400", sans-serif;
+  --FF-600: "poppins-600", sans-serif;
+
+  /* COLORS */
+
+  /* Primary */
+  --RED: hsl(0, 78%, 62%);
+  --CYAN: hsl(180, 62%, 55%);
+  --ORANGE: hsl(34, 97%, 64%);
+  --BLUE: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --VD-BLUE: hsl(234, 12%, 34%);
+  --G-BLUE: hsl(229, 6%, 66%);
+  --VL-GRAY: hsl(0, 0%, 98%);
+
+  /* PADDING */
+  --PADDING: 1rem;
+}
+
+/* //UTILITY CLASSES */
+
+/* //GENERAL STYLES */
+
+body {
+  font-family: var(--FF-400);
+  /* width: 75%; */
+  /* margin: 0 auto; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--VL-GRAY);
+}
+
+header {
+  padding-top: 2rem;
+  margin-bottom: 3.75rem;
+  text-align: center;
+}
+
+/* //CLASS STYLES */
+
+/* HEADER STYLES */
+.header__title {
+  font-size: 1.6rem;
+  font-family: var(--FF-200);
+  font-weight: 200;
+  word-spacing: 3px;
+  margin-bottom: 0;
+}
+
+.header .header__h2 {
+  font-size: 1.6rem;
+  word-spacing: 3px;
+  font-family: var(--FF-600);
+}
+
+.header__text {
+  width: 320px;
+  text-align: center;
+  color: var(--G-BLUE);
+}
+
+/* CARD STYLES */
+
+.card {
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 2rem;
+  max-width: 320px;
+  padding: 2rem;
+  border-radius: 7px;
+  border-top: 4px solid transparent;
+  box-shadow: 0px 5px 10px 0px rgba(156, 168, 184, 0.658);
+}
+
+.card__title {
+  font-size: 1.2rem;
+  color: var(--VD-BLUE);
+}
+
+.card__text {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  font-family: var(--FF-400);
+  color: var(--G-BLUE);
+  margin: 12px 0 1.75rem 0;
+}
+
+.image {
+  margin-left: auto;
+}
+
+.card__supervisor {
+  border-color: var(--CYAN);
+}
+.card__team {
+  border-color: var(--RED);
+}
+.card__karma {
+  border-color: var(--ORANGE);
+}
+.card__calculator {
+  border-color: var(--BLUE);
+}
+
+/* //MEDIA QUERIES */
+
+/* FOR SCREEN SIZES - 768PX */
+
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    column-gap: 2rem;
+  }
+}
+
+/* FOR SCREEN SIZES - 1200PX */
+
+@media screen and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat (2, auto);
+    column-gap: 2rem;
+  }
+
+  .card:nth-child(1) {
+    transform: translateY(50%);
+  }
+
+  .card:nth-child(4) {
+    transform: translateY(50%);
+    grid-column: 3/4;
+    grid-row: -1/-2;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2/3;
+  }
+  .header__text {
+    width: 100%;
+  }
+}
+
+/* //ATTRIBUTION */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
